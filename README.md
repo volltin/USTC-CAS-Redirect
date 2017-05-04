@@ -5,7 +5,7 @@ A simple html page to help your application use USTC CAS(Central Authentication 
 * A static html page under `*.ustc.edu.cn` (eg. `home.ustc.edu.cn`).
 * An API from your application to receive and use the CAS ticket.
 
-# Config
+# Configurations
 * Edit `index.html`
 ```javascript
 // This page's url, the host must end with ".ustc.edu.cn"
