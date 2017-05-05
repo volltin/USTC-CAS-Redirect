@@ -8,10 +8,10 @@
 Redirect..
 <script>
     // This page's url, the host must end with ".ustc.edu.cn"
-    var serviceURL = "https://home.ustc.edu.cn/~your_name/cas/index.html";
+    var serviceURL = "https://home.ustc.edu.cn/~your_name/cas/index.html?id={0}";
 
     // When this page get ticket, user will be redirected to apiUrl
-    var apiURL = "http://your_api_host/cas?ticket={0}&service={1}";
+    var apiURL = "http://your_api_host/cas?id={0}&ticket={1}&service={2}";
 
     // Default USTC CAS Url
     var CASURL = "https://passport.ustc.edu.cn/login?service={0}";
@@ -30,9 +30,12 @@ Redirect..
     window.onload = function() {
         console.log('window onload');
         var ticket = getURLParameter('ticket');
+        var id = getURLParameter('id');
+        serviceURL = serviceURL.URLFormat(id);
+
         if (ticket) {
             // redirect to api
-            var jumpURL = apiURL.URLFormat(ticket, serviceURL);
+            var jumpURL = apiURL.URLFormat(id, ticket, serviceURL);
         } else {
             // redirect to cas
             var jumpURL = CASURL.URLFormat(serviceURL);
