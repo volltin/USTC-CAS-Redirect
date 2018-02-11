@@ -28,4 +28,4 @@ var apiURL = "http://your_api_host/cas?id={0}&ticket={1}&service={2}";
 * The common way to identify user is to use COOKIES or SESSIONS.
 
 # About CAS
-More info: http://www.ja-sig.org/products/cas
+More info: https://en.wikipedia.org/wiki/Central_Authentication_Service
